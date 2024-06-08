@@ -24,4 +24,20 @@ public class Conexao {
             return null;
         }
     }
+
+    public static String getUrl() {
+        return url;
+    }
+
+    public static String getUser() {
+        return user;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static Connection getConn() {
+        return conn;
+    }
 }

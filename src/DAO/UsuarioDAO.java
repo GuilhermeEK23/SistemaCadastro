@@ -1,7 +1,9 @@
 package DAO;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import conexao.Conexao;
 import entity.Usuario;
@@ -28,4 +30,15 @@ public class UsuarioDAO {
         }
     }
 
+    public ResultSet consultarUsuario(){
+        String sql = "SELECT * FROM SISTEMA.USUARIO";
+        try {
+            Statement statement = Conexao.getConexao().createStatement();
+            ResultSet result = statement.executeQuery(sql);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
